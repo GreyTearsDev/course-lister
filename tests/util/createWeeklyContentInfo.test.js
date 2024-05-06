@@ -7,7 +7,7 @@ describe("createWeeklyContentInfo", () => {
     "testing content"
   );
   
-  it("returns an object with week, a topic, and content key", () => {
+  it("returns an object with a week, a topic, and a content key", () => {
     expect(info).toHaveProperty("week");
     expect(info).toHaveProperty("topic");
     expect(info).toHaveProperty("content");
