@@ -7,8 +7,8 @@ export default function createCourse(
   enrollmentStatus,
   thumbnail,
   duration,
-  schedule = "Any time",
-  location = "Online",
+  schedule,
+  location,
   prerequisites,
   syllabus,
   students
