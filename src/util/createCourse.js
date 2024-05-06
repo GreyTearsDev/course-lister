@@ -9,7 +9,7 @@ export default function createCourse(
   duration,
   schedule = "Any time",
   location = "Online",
-  prerequisites = "None" ,
+  prerequisites,
   syllabus,
   students
 ) {
