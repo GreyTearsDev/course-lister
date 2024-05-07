@@ -19,21 +19,21 @@ const syllabi = {
   ],  
 }
 
-const students = {
-  groupOne: [
-    createStudent("Tirso Samalungo", "tirso@example.com"),
-    createStudent("Rayanna Maber", "ray@example.com"),
-    createStudent("Kassandra dos Santos", "kassy@example.com"),
-  ],
-  groupTwo: [
-    createStudent("Elsa Torres", "elsa@example.com"),
-    createStudent("Daniela Conrado", "dani@example.com"),
-  ],
-  groupThree: [
-    createStudent("Arminda Rodrigues", "arminda@example.com"),
-    createStudent("Lulena Benjamin", "joa@example.com"),
-  ]
+const enrolledStudents = {
+  groupOne: users.slice(0, 2),
+  groupTwo: users.slice(2, 4),
+  groupThree: users.slice(4),
 }
+
+const users = [
+  createStudent("Tirso Samalungo", "tirso@example.com"),
+  createStudent("Rayanna Maber", "ray@example.com"),
+  createStudent("Kassandra dos Santos", "kassy@example.com"),
+  createStudent("Elsa Torres", "elsa@example.com"),
+  createStudent("Daniela Conrado", "dani@example.com"),
+  createStudent("Arminda Rodrigues", "arminda@example.com"),
+  createStudent("Lulena Benjamin", "joa@example.com"),
+];
 
 const prerequisites = {
   beginner: ["None"],
@@ -52,7 +52,7 @@ const accessibleHtml = createCourse(
   "Online",
   prerequisites.intermediate,
   syllabi.accessibleHtml,
-  students.groupOne,  
+  enrolledStudents.groupOne,  
 )
 
 const introToHtml = createCourse(
@@ -66,7 +66,7 @@ const introToHtml = createCourse(
   "Online",
   prerequisites.beginner,
   syllabi.introToHtml,
-  students.groupThree,  
+  enrolledStudents.groupThree,  
 )
 
 const fullStack = createCourse(
@@ -80,7 +80,7 @@ const fullStack = createCourse(
   "Online",
   prerequisites.advanced,
   syllabi.fullStack,
-  students.groupTwo,  
+  enrolledStudents.groupTwo,  
 )
 
 export default function mockAPI() {
