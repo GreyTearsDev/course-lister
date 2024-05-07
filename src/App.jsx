@@ -1,7 +1,16 @@
 import "./App.css";
+import { Outlet } from "react-router-dom";
+import Navbar from "./components/Navbar";
 
 function App() {
-  return <h1>hi</h1>;
+  return (
+    <div className="app">
+      <Navbar />
+      <main className="main-container">
+        <Outlet />
+      </main>
+    </div>
+  );
 }
 
 export default App;
