@@ -1,4 +1,5 @@
 import createCourse from "../../src/util/createCourse";
+import {describe, it, expect} from "vitest"
 
 describe("createCourse", () => {
   const course = createCourse(
