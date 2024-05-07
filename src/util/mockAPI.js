@@ -85,7 +85,5 @@ const fullStack = createCourse(
   enrolledStudents.groupTwo,  
 )
 
-export default function mockAPI() {
-  return [accessibleHtml, introToHtml, fullStack ] 
-}
+export const mockAPI = [accessibleHtml, introToHtml, fullStack ]
 
