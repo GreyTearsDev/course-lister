@@ -26,7 +26,6 @@ const coursesSlice = createSlice({
     },
     setCompletionStatus: (state, action) => {
       const  course = action.payload;
-      console.log(course)
       state.find(c => c.id === course.id).isCompleted = !course.isCompleted;
     }
   },
@@ -57,7 +56,7 @@ const userSlice = createSlice({
 export const selectUser = (state) => state[1];
 export const selectCourses = (state) => state[0];
 
-export const selectUserCourses = createSelector(
+export const selectGetUser = createSelector(
   [selectUser],
   (user) => user
 );
