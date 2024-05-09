@@ -29,8 +29,8 @@ export default function EnrolledCoursesList(props) {
                 <img src={course.thumbnail} alt="" />
               </div>
               <div className="info">
-                <h2>{course.name}</h2>
-                <h3>{course.instructor}</h3>
+                <h2>Title: {course.name}</h2>
+                <h3>Instructor: {course.instructor}</h3>
                 <label htmlFor="completion">
                   Completed
                   <input type="checkbox" id="completion" onChange={() => handleCourseCompletion(course)} />
