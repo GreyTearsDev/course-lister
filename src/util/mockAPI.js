@@ -1,11 +1,10 @@
 import createCourse from "./createCourse";
-import createStudent from "./createStudent"
 import createWeeklyContentInfo from "./createWeeklyContentInfo"
 
 
 const syllabi = {
   accessibleHtml: [
-    createWeeklyContentInfo(1, "Meet ARIA (not the Stark girl)", "You will probably learn something usefull"),
+    createWeeklyContentInfo(1, "Meet ARIA (A tag has no name)", "You will probably learn something usefull"),
     createWeeklyContentInfo(2, "The Accessibility tree", "You won't believe how cool it is"),
     createWeeklyContentInfo(3, "The things that are definetly important", "Commiting early and often... ?"),
   ],  
