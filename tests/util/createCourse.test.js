@@ -13,7 +13,6 @@ describe("createCourse", () => {
     "online",
     ["none"],
     [{topic: "def"}],
-    [{name: "jeff"}]
   );
   
   it("returns an object with the expected keys", () => {
@@ -28,7 +27,6 @@ describe("createCourse", () => {
     expect(course).toHaveProperty("location");
     expect(course).toHaveProperty("prerequisites");
     expect(course).toHaveProperty("syllabus");
-    expect(course).toHaveProperty("students");
   })
 
   it("assigns the values passed as arguments to the correct fields", () => {
@@ -42,7 +40,6 @@ describe("createCourse", () => {
     expect(course.location).toBe("online");
     expect(course.prerequisites[0]).toBe("none");
     expect(course.syllabus[0].topic).toBe("def");
-    expect(course.students[0].name).toBe("jeff");
   })
 
 })
