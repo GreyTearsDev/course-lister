@@ -143,15 +143,25 @@ nav ul {
 
 .course > .btn {
   position: absolute;
-  right: 0;
+  right: 2vw;
+}
+.course--expanded > .btn {
+  top: 2vw;
 }
 
-.course--collapsed .thumbnail {
+.course--completed {
+  filter: brightness(0.8);
+  opacity: 0.9;
+}
+
+.course .thumbnail {
   max-width: 300px;
+  max-height: 200px;
   margin-right: 2vw;
 }
 
 .thumbnail {
+  text-align: center;
   overflow: hidden;
 }
 
