@@ -1,11 +1,11 @@
 import { v4 as uuidv4 } from 'uuid';
 
 export default function createStudent(name, email) {
-  const enrolledCorsesIDs = [];
+  const enrolledCoursesIds = [];
   return {
     id: uuidv4(),
     name: name,
     email: email,
-    enrolledCorsesIDs
+    enrolledCoursesIds
   }
 }
