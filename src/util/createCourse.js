@@ -11,7 +11,6 @@ export default function createCourse(
   location,
   prerequisites,
   syllabus,
-  enrolled,
 ) {
   return {
     id: uuidv4(),
@@ -26,5 +25,6 @@ export default function createCourse(
     prerequisites: prerequisites,
     syllabus: syllabus,
     enrolled: false,
+    completed: false,
   }
 }
