@@ -1,10 +1,19 @@
 import { createSlice, createSelector } from "@reduxjs/toolkit";
 import {mockAPI} from "../util/mockAPI"
 import createStudent from "../util/createStudent"
+import { createAsyncThunk } from "@reduxjs/toolkit";
+
+
+export const fetchAPIData = createAsyncThunk(
+  "courses/fetchAPIData",
+  async () => {
+    return mockAPI;
+  }
+);
 
 const coursesSlice = createSlice({
   name: "courses",
-  initialState: mockAPI,
+  initialState: [],
   reducers: {
     toggleEnroll: (state, action) => {
       const courseId = action.payload;
@@ -20,6 +29,11 @@ const coursesSlice = createSlice({
       console.log(course)
       state.find(c => c.id === course.id).isCompleted = !course.isCompleted;
     }
+  },
+  extraReducers: (builder) => {
+    builder.addCase(fetchAPIData.fulfilled, (state, action) => {
+      return action.payload;
+    });
   },
 });
 
@@ -54,7 +68,7 @@ export const selectGetCourses = createSelector(
 );
 
 
-export const { toggleEnroll, getCourse, setCompletionStatus} = coursesSlice.actions;
+export const {setAPIData, toggleEnroll, getCourse, setCompletionStatus} = coursesSlice.actions;
 export const { addCourseToUser, removeCourseFromUser} = userSlice.actions;
 export default [coursesSlice.reducer, userSlice.reducer];
 
