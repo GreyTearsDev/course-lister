@@ -33,7 +33,12 @@ export default function EnrolledCoursesList(props) {
                 <h3>Instructor: {course.instructor}</h3>
                 <label htmlFor="completion">
                   Completed
-                  <input type="checkbox" id="completion" onChange={() => handleCourseCompletion(course)} />
+                  <input
+                    checked={course.isCompleted}
+                    type="checkbox"
+                    id="completion"
+                    onChange={() => handleCourseCompletion(course)}
+                  />
                 </label>
               </div>
             </div>
