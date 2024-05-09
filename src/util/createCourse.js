@@ -25,6 +25,6 @@ export default function createCourse(
     prerequisites: prerequisites,
     syllabus: syllabus,
     enrolled: false,
-    completed: false,
+    isCompleted: false,
   }
 }
