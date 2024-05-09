@@ -1,12 +1,12 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { addCourseToUser, removeCourseFromUser, toggleEnroll } from "../../redux/reducers";
+import { useDispatch, useSelector } from "react-redux";
+import { addCourseToUser, removeCourseFromUser, selectGetCourses, toggleEnroll } from "../../redux/reducers";
 import CourseMainInfo from "./CourseMainInfo";
 import CourseSecondaryInfo from "./CourseSecondaryInfo";
 
 export default function CourseDetailsScreen({ course }) {
-  const [enroll, setEnroll] = useState(false);
+  const enroll = useSelector(selectGetCourses).find(c => c.id === course.id).enrolled;
   const [expandCourse, setExpandCourse] = useState(false);
   const dispatch = useDispatch();
 
@@ -17,7 +17,6 @@ export default function CourseDetailsScreen({ course }) {
       dispatch(removeCourseFromUser(course.id));
     }
     dispatch(toggleEnroll(course.id));
-    setEnroll(!enroll);
   };
 
   const handleClick = () => {
