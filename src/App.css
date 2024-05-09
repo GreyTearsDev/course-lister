@@ -1,4 +1,4 @@
-/*reset styles*/
+/*RESETING STYLES*/
 
 /* Box sizing rules */
 *,
@@ -55,8 +55,10 @@ label {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5 {
   text-wrap: balance;
+  margin: 0;
 }
 
 /* A elements that don't have a class get default styles */
@@ -89,4 +91,74 @@ textarea:not([rows]) {
 /* Anything that has been anchored to should have extra scroll margin */
 :target {
   scroll-margin-block: 5ex;
+}
+
+body {
+  background-color: rgb(69, 91, 65);
+}
+
+.app {
+  height: 100vh;
+  width: 100vw;
+  padding: 30px clamp(30px, 4vw, 500px);
+  overflow: hidden;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 2vw;
+  font-size: clamp(20px, 2vw, 40px);
+  margin: 0;
+}
+
+.main-container {
+  max-height: 100%;
+  overflow: scroll;
+  padding: 2vw 4vw;
+}
+
+.course {
+  padding: 2vw 4vw;
+  background-color: rgb(44, 76, 59);
+  display: flex;
+  position: relative;
+  margin-bottom: clamp(10px, 3vw, 40px);
+}
+
+.course h2 {
+  margin-bottom: 0.4em;
+}
+
+.course--expanded {
+  display: grid;
+  gap: 2vw;
+  grid-template-columns: minmax(200px, 500px) 1fr;
+  flex-direction: column;
+}
+
+.course > .btn {
+  position: absolute;
+  right: 0;
+}
+
+.course--collapsed .thumbnail {
+  max-width: 300px;
+  margin-right: 2vw;
+}
+
+.thumbnail {
+  overflow: hidden;
+}
+
+.course--expanded .thumbnail {
+  max-height: 200px;
+}
+
+.thumbnail > img {
+  object-fit: contain;
 }
