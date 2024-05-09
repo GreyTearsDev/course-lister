@@ -25,4 +25,5 @@ CourseMainInfo.propTypes = {
   expandCourse: PropTypes.bool,
   handleEnroll: PropTypes.func,
   course: PropTypes.object,
+  enroll: PropTypes.bool,
 };
