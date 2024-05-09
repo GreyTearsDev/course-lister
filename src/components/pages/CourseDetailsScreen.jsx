@@ -1,14 +1,13 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { addCourseToUser, removeCourseFromUser, selectUser, toggleEnroll } from "../../redux/reducers";
+import { useDispatch } from "react-redux";
+import { addCourseToUser, removeCourseFromUser, toggleEnroll } from "../../redux/reducers";
 import CourseMainInfo from "./CourseMainInfo";
 import CourseSecondaryInfo from "./CourseSecondaryInfo";
 
 export default function CourseDetailsScreen({ course }) {
   const [enroll, setEnroll] = useState(false);
   const [expandCourse, setExpandCourse] = useState(false);
-  const user = useSelector(selectUser);
   const dispatch = useDispatch();
 
   const handleEnroll = () => {
@@ -26,26 +25,24 @@ export default function CourseDetailsScreen({ course }) {
   };
 
   return (
-    <div key={course.id} className="screen course">
+    <div key={course.id} className={`course ${expandCourse ? "course--expanded" : "course--collapsed"}`}>
       <div className="thumbnail">
         <img src={course.thumbnail} />
       </div>
 
-      <div className="info">
-        <CourseMainInfo
-          course={course}
-          handleEnroll={handleEnroll}
-          enroll={enroll}
-          expandCourse={expandCourse}
-        />
+      <CourseMainInfo
+        course={course}
+        handleEnroll={handleEnroll}
+        enroll={enroll}
+        expandCourse={expandCourse}
+      />
 
-        <CourseSecondaryInfo
-          course={course}
-          expandCourse={expandCourse}
-        />
+      <CourseSecondaryInfo
+        course={course}
+        expandCourse={expandCourse}
+      />
 
-        <button onClick={handleClick}>{expandCourse ? "Collapse" : "Expand"}</button>
-      </div>
+      <button className="btn btn-large" onClick={handleClick}>{expandCourse ? "Collapse" : "Expand"}</button>
     </div>
   );
 }
