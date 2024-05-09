@@ -11,20 +11,29 @@ const coursesSlice = createSlice({
       const course = state.find(course => course.id === courseId)
       if (course) course.enrolled = !course.enrolled;
     },
+    getCourse: (state, action) => {
+      const courseId = action.payload;
+      return state.find(course => course.id === courseId)
+    },
+    setCompletionStatus: (state, action) => {
+      const  course = action.payload;
+      console.log(course)
+      state.find(c => c.id === course.id).isCompleted = !course.isCompleted;
+    }
   },
 });
 
 const userSlice = createSlice({
   name: "user",
-  initialState: createStudent("My Cool Name", "alsocool@email,com"),
+  initialState: createStudent("Sandor Clegane", "alsocool@email,com"),
   reducers: {
     addCourseToUser: (state, action) => {
       let courseId = action.payload;
-      state.enrolledCorsesIDs.push(courseId);
+      state.enrolledCoursesIds.push(courseId);
     },
     removeCourseFromUser: (state, action) => {
       const courseId = action.payload;
-      const courses = state.enrolledCorsesIDs;
+      const courses = state.enrolledCoursesIds;
       const index = courses.indexOf(courseId)
       if (index !== -1) courses.splice(index, 1);
     },
@@ -45,7 +54,7 @@ export const selectGetCourses = createSelector(
 );
 
 
-export const { toggleEnroll } = coursesSlice.actions;
-export const { addCourseToUser, removeCourseFromUser } = userSlice.actions;
+export const { toggleEnroll, getCourse, setCompletionStatus} = coursesSlice.actions;
+export const { addCourseToUser, removeCourseFromUser} = userSlice.actions;
 export default [coursesSlice.reducer, userSlice.reducer];
 
