@@ -3,16 +3,6 @@ import createStudent from "./createStudent"
 import createWeeklyContentInfo from "./createWeeklyContentInfo"
 
 
-const users = [
-  createStudent("Tirso Samalungo", "tirso@example.com"),
-  createStudent("Rayanna Maber", "ray@example.com"),
-  createStudent("Kassandra dos Santos", "kassy@example.com"),
-  createStudent("Elsa Torres", "elsa@example.com"),
-  createStudent("Daniela Conrado", "dani@example.com"),
-  createStudent("Arminda Rodrigues", "arminda@example.com"),
-  createStudent("Lulena Benjamin", "joa@example.com"),
-];
-
 const syllabi = {
   accessibleHtml: [
     createWeeklyContentInfo(1, "Meet ARIA (not the Stark girl)", "You will probably learn something usefull"),
@@ -29,13 +19,6 @@ const syllabi = {
     createWeeklyContentInfo(2, "Shopping Cart", "Create a shopping cart app insoired by Amazon's website (or whatever, idk)"),
   ],  
 }
-
-const enrolledStudents = {
-  groupOne: users.slice(0, 2),
-  groupTwo: users.slice(2, 4),
-  groupThree: users.slice(4),
-}
-
 
 const prerequisites = {
   beginner: ["None"],
@@ -54,7 +37,6 @@ const accessibleHtml = createCourse(
   "Online",
   prerequisites.intermediate,
   syllabi.accessibleHtml,
-  enrolledStudents.groupOne,  
 )
 
 const introToHtml = createCourse(
@@ -68,7 +50,6 @@ const introToHtml = createCourse(
   "Online",
   prerequisites.beginner,
   syllabi.introToHtml,
-  enrolledStudents.groupThree,  
 )
 
 const fullStack = createCourse(
@@ -82,7 +63,6 @@ const fullStack = createCourse(
   "Online",
   prerequisites.advanced,
   syllabi.fullStack,
-  enrolledStudents.groupTwo,  
 )
 
 export const mockAPI = [accessibleHtml, introToHtml, fullStack ]
