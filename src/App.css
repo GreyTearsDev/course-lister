@@ -100,9 +100,9 @@ body {
 .app {
   height: 100vh;
   width: 100vw;
-  padding: 30px clamp(30px, 4vw, 500px);
   overflow: hidden;
 }
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -116,6 +116,10 @@ nav ul {
   margin: 0;
 }
 
+nav,
+.main-container {
+  padding: 30px clamp(30px, 4vw, 500px);
+}
 .main-container {
   max-height: 100%;
   overflow: scroll;
@@ -130,7 +134,7 @@ nav ul {
   margin-bottom: clamp(10px, 3vw, 40px);
 }
 
-.course h2 {
+h2 {
   margin-bottom: 0.4em;
 }
 
@@ -171,4 +175,30 @@ nav ul {
 
 .thumbnail > img {
   object-fit: contain;
+}
+
+.list h2,
+.info__main .btn {
+  margin-top: 0.8em;
+}
+
+.search-bar {
+  margin-bottom: 0.9vw;
+}
+
+.list,
+.syllabus {
+  display: flex;
+  flex-direction: column;
+}
+
+.list {
+  gap: 1vw;
+}
+
+.syllabus {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  gap: 0.5vw;
+  padding: 30px clamp(30px, 4vw, 500px);
 }
