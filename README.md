@@ -2,7 +2,7 @@
 
 A simple web application for showcasing a list of courses and their details using React.
 
-## Click [HERE](https://course-lister.vercel.app/course-listing) to checkout the live preview
+## Click [HERE](https://course-lister.vercel.app/course-listing) to try it out
 
 ## Technologies used
 
