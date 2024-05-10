@@ -4,6 +4,8 @@ A simple web application for showcasing a list of courses and their details usin
 
 ## Click [HERE](https://course-lister.vercel.app/course-listing) to try it out
 
+## And here is video preview
+
 ## Technologies used
 
 <p>
