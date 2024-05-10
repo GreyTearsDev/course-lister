@@ -22,7 +22,7 @@ export default function CourseListing() {
     <div className="screen">
       <div className="search-bar">
         <label htmlFor="search">
-          Search<input type="text" onChange={handleSearch} />
+          Search: <input type="text" onChange={handleSearch} />
         </label>
       </div>
       {filteredCourses.map(course => <CourseDetailsScreen key={course.id} course={course} />)}
