@@ -212,7 +212,12 @@ h4 {
 }
 
 .search-bar {
-  margin-bottom: 0.9vw;
+  width: 100%;
+  background-color: rgb(69, 91, 65);
+  position: fixed;
+  z-index: 2;
+  top: 100px;
+  padding-bottom: 0.5vw;
 }
 
 .list,
