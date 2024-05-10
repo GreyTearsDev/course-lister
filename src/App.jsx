@@ -13,7 +13,7 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className="app">
+    <div className="app container">
       <Navbar />
       <main className="main-container">
         <Outlet />
